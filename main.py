@@ -11,13 +11,13 @@ flags = tf.app.flags
 # directories
 flags.DEFINE_string('model', 'dmn+', 'Model type - dmn+, dmn, dmn_embed [Default: DMN+]')
 flags.DEFINE_boolean('test', False, 'true for testing, false for training [False]')
-flags.DEFINE_string('data_dir', 'data/tasks_1-20_v1-2/en-10k', 'Data directory [data/tasks_1-20_v1-2/en-10k]')
+flags.DEFINE_string('data_dir', 'data/tasks_1-20_v1-2/en', 'Data directory [data/tasks_1-20_v1-2/en]')
 flags.DEFINE_string('save_dir', 'save', 'Save path [save]')
 
 # training options
 flags.DEFINE_bool('gpu', True, 'Use GPU? [True]')
-flags.DEFINE_integer('batch_size', 128, 'Batch size during training and testing [128]')
-flags.DEFINE_integer('num_epochs', 256, 'Number of epochs for training [256]')
+flags.DEFINE_integer('batch_size', 32, 'Batch size during training and testing [128]')
+flags.DEFINE_integer('num_epochs', 160, 'Number of epochs for training [256]')
 flags.DEFINE_float('learning_rate', 0.001, 'Learning rate [0.001]')
 flags.DEFINE_boolean('load', False, 'Start training from saved model? [False]')
 flags.DEFINE_integer('acc_period', 10, 'Training accuracy display period [10]')
@@ -29,8 +29,8 @@ flags.DEFINE_integer('memory_step', 3, 'Episodic Memory steps [3]')
 flags.DEFINE_string('memory_update', 'relu', 'Episodic meory update method - relu or gru [relu]')
 # flags.DEFINE_bool('memory_tied', False, 'Share memory update weights among the layers? [False]')
 flags.DEFINE_integer('glove_size', 50, 'GloVe size - Only used in dmn [50]')
-flags.DEFINE_integer('embed_size', 80, 'Word embedding size - Used in dmn+, dmn_embed [80]')
-flags.DEFINE_integer('hidden_size', 80, 'Size of hidden units [80]')
+flags.DEFINE_integer('embed_size', 50, 'Word embedding size - Used in dmn+, dmn_embed [80]')
+flags.DEFINE_integer('hidden_size', 50, 'Size of hidden units [80]')
 
 # train hyperparameters
 flags.DEFINE_float('weight_decay', 0.001, 'Weight decay - 0 to turn off L2 regularization [0.001]')
